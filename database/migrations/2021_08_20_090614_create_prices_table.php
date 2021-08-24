@@ -16,6 +16,12 @@ class CreatePricesTable extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->decimal('price')->default(3.5);
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->userstamps();
+            $table->softUserstamps();    
+
         });
     }
 

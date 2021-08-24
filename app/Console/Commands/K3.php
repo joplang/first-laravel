@@ -1,43 +1,19 @@
 <?php
 
-namespace App\Console\Commands;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Foundation\K3;
 
-use Illuminate\Console\Command;
-use App\Models\User;
+/*
+|--------------------------------------------------------------------------
+| Console Routes
+|--------------------------------------------------------------------------
+|
+| This file is where you may define all of your Closure based console
+| commands. Each Closure is bound to a command instance allowing a
+| simple approach to interacting with each command's IO methods.
+|
+*/
 
-class K3 extends Command
-{
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'K3';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Command description';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
-    {
-        $this->info('Ik voel me plots weer zo Oya Lele');
-    }
-}
+Artisan::command('k3', function () {
+    $this->comment(K3::quote());
+})->purpose('Display a K3 lyric');

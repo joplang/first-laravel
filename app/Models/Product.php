@@ -4,8 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Sqits\UserStamps\Concerns\HasUserStamps;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUserStamps;
+
+    protected $table = 'products';
 }

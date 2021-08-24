@@ -17,8 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('category');
-            $table->foreign('category')->references('name')->on('categories');
+            $table->text('info');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->userstamps();
             $table->softUserstamps();    
         });
