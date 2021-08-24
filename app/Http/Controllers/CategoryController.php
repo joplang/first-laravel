@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use Illuminate\View\View as ViewView;
+use App\Models\Product;
 
 class CategoryController extends Controller
 {
@@ -14,7 +17,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+       // dd($categories);
+
+       return view('categories/index',
+    [
+        'categories' => $categories
+    ]);
     }
 
     /**
@@ -46,7 +56,15 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $products = Product::all();
+
+        //dd($products);
+        return view('categories/show',
+        [
+            'category' => $category,
+            'products'  => $products
+        ]
+        );
     }
 
     /**

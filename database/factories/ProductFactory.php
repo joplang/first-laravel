@@ -22,7 +22,9 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->emoji(),
+            'category_id'=> $this->faker->randomDigitNotZero(),
+            'info' => $this->faker->K3(),
         ];
     }
 }
