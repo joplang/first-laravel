@@ -1,4 +1,4 @@
-Dit is de webshop van Bas en Joppe
+Dit is een projectje
 
 ## Contributing
 
